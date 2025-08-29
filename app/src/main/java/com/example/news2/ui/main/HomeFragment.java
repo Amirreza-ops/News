@@ -14,9 +14,12 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.news2.R;
 import com.example.news2.databinding.FragmentHomeBinding;
 import com.example.news2.ui.adapter.ViewPagerAdapter;
+import com.example.news2.ui.details.CategorizedNewsFragment;
+import com.example.news2.ui.details.HomeNewsFragment;
+import com.example.news2.utils.Refreshable;
 import com.google.android.material.tabs.TabLayout;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements Refreshable {
 
     private FragmentHomeBinding binding;
     TabLayout tabLayout;
@@ -29,6 +32,7 @@ public class HomeFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         init();
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -68,7 +72,23 @@ public class HomeFragment extends Fragment {
     private void init() {
         tabLayout = binding.tabLayout;
         viewPager = binding.viewPager;
+        viewPager.setUserInputEnabled(false);
         viewPagerAdapter = new ViewPagerAdapter(getActivity());
         viewPager.setAdapter(viewPagerAdapter);
+    }
+
+    @Override
+    public void refreshData() {
+        int currentItem = viewPager.getCurrentItem();
+        Fragment page = getActivity().getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewPager + ":" + viewPager.getCurrentItem());
+        Fragment currentChild;
+        if (currentItem == 0 ){
+            currentChild = new HomeNewsFragment();
+        } else {
+            currentChild = new CategorizedNewsFragment();
+        }
+        if (currentChild instanceof Refreshable){
+            ((Refreshable) currentChild).refreshData();
+        }
     }
 }

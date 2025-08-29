@@ -29,7 +29,10 @@
                         android:layout_width="4dp"
                         android:layout_height="28dp"
                         android:layout_centerVertical="true"
-                        android:layout_margin="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
                         android:background="@drawable/line_with_radius" />
 
                     <TextView
@@ -39,19 +42,19 @@
                         android:layout_toRightOf="@+id/topLine"
                         android:text="Top Headlines"
                         android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="22sp"
+                         />
 
                 </RelativeLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/sliderCardView"
+                <RelativeLayout
+                    android:id="@+id/sliderLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="300dp"
                     android:layout_below="@+id/topLayout"
-                    android:layout_margin="16dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    >
 
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewPagerSlider"
@@ -59,14 +62,14 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal" />
 
-                </androidx.cardview.widget.CardView>
+                </RelativeLayout>
 
 
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                     android:id="@+id/dotsIndicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/sliderCardView"
+                    android:layout_below="@+id/sliderLayout"
                     android:layout_centerHorizontal="true"
                     app:dotsColor="#e4e4e4"
                     app:dotsCornerRadius="8dp"
@@ -88,7 +91,10 @@
                         android:layout_width="4dp"
                         android:layout_height="28dp"
                         android:layout_centerVertical="true"
-                        android:layout_margin="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
                         android:background="@drawable/line_with_radius" />
 
                     <TextView
@@ -98,19 +104,19 @@
                         android:layout_toRightOf="@+id/midLine"
                         android:text="Breaking News"
                         android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="22sp"
+                        />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="16dp"
-                        android:text="See more"
-                        android:textColor="#429AF1"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginRight="16dp"-->
+<!--                        android:text="See more"-->
+<!--                        android:textColor="#429AF1"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
                 </RelativeLayout>
 
@@ -147,19 +153,19 @@
                         android:layout_toRightOf="@+id/bottomLine"
                         android:text="Hot &amp; trending"
                         android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="22sp"
+                         />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="16dp"
-                        android:text="See more"
-                        android:textColor="#429AF1"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginRight="16dp"-->
+<!--                        android:text="See more"-->
+<!--                        android:textColor="#429AF1"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
                 </RelativeLayout>
 
